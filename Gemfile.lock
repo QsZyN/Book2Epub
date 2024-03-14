@@ -1,0 +1,50 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    faraday (1.10.3)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0)
+      faraday-multipart (~> 1.0)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.0)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
+      faraday-retry (~> 1.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    faraday-retry (1.0.3)
+    gyazo (3.1.1)
+      faraday (< 2.0.0)
+      mime-types
+      multipart-post
+    json (2.7.1)
+    mime-types (3.5.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2024.0305)
+    multipart-post (2.4.0)
+    nokogiri (1.13.10-arm64-darwin)
+      racc (~> 1.4)
+    racc (1.7.3)
+    ruby2_keywords (0.0.5)
+
+PLATFORMS
+  universal-darwin-23
+
+DEPENDENCIES
+  gyazo
+  json
+  nokogiri
+
+BUNDLED WITH
+   2.3.3
