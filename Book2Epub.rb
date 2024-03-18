@@ -49,6 +49,7 @@ pages << page
         gyazourl = res[:permalink_url]
         STDERR.puts gyazourl
         img.replace("[#{gyazourl}]")
+        sleep 1
     end
 
     #段落を作る
