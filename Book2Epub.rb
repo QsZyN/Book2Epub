@@ -2,8 +2,7 @@ require 'nokogiri'
 require 'gyazo'
 require 'uri'
 
-@suffix = ""
-bookname = ""
+
 project_name = ""
 
 jsondata = {}
@@ -13,7 +12,11 @@ jsondata['pages'] = pages
 token = ENV['GYAZO_ACCESS_TOKEN']
 gyazo = Gyazo::Client.new access_token: token
 
-htmlfiles = ARGV.grep /\.html/i
+epubfile = File.expand_path(ARGV.first)
+htmlfiles = Dir.entries("#{epubfile}/text")
+
+bookname = File.basename(epubfile, '.*').split.first
+@suffix = bookname.slice(0, 10)
 
 #表紙
 page = {}
@@ -28,7 +31,7 @@ pages << page
 
 
 (0..htmlfiles.length-1).each { |i|
-    target_file_path = File.expand_path(htmlfiles[i])
+    target_file_path = "#{epubfile}/text/#{htmlfiles[i]}"
     doc = File.open(target_file_path) { |f| Nokogiri::HTML(f) }
 
     def title(page)
