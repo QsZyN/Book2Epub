@@ -54,7 +54,9 @@ pages << page
 
     #段落を作る
     doc.css("p").each do |p|
-        p.content = "[　]#{p.content}"
+        if p.content != ""
+            p.content = "[　]#{p.content.gsub(/\A[[:space:]]+/, '')}\n"
+        end
     end
     
     #空白と区別するために一時的にタグと置換
