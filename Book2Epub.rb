@@ -16,7 +16,7 @@ epubfile = File.expand_path(ARGV.first)
 htmlfiles = Dir.entries("#{epubfile}/text")
 
 bookname = File.basename(epubfile, '.*').split.first
-@suffix = bookname.slice(0, 10)
+@suffix = ('a'..'z').to_a.sample(4).join
 
 #表紙
 page = {}
@@ -78,6 +78,7 @@ pages << page
   }
     lines << ""
     lines << "[#{title(i+1)}]"
+    lines << ""
     lines << "Part of [#{bookname}]"
 
     #連続する改行を一行に変換
