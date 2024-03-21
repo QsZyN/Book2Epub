@@ -35,7 +35,7 @@ pages << page
     doc = File.open(target_file_path) { |f| Nokogiri::HTML(f) }
 
     def title(page)
-        return "p#{page}##{@suffix}"
+        return "#{sprintf("%03d", page)}##{@suffix}"
     end    
 
     #ルビの削除
